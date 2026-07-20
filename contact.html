@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — RapidBio Systems</title>
+  <meta name="description" content="Request the RapidBio investor deck or get in touch with President &amp; CEO John Erickson." />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="index.html" aria-label="RapidBio Systems home">
+        <img src="assets/logo-nav.png" alt="RapidBio Systems" />
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html" class="is-active">Contact</a></li>
+          <li><a class="btn btn--primary" href="contact.html">Request the deck</a></li>
+        </ul>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn btn--primary" href="contact.html">Request the deck</a>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--mint">
+      <div class="container">
+        <div class="section-head narrow">
+          <span class="eyebrow">Contact</span>
+          <h2 class="mt-0">Request the deck or start a conversation</h2>
+          <p class="lead">Tell us a little about your interest and we'll follow up with the investor deck and next steps.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-wrap">
+          <!-- ===== FORM ===== -->
+          <form class="form" id="contact-form"
+                action="https://formspree.io/f/FORMSPREE_ENDPOINT"
+                method="POST">
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="I'd like to learn more about the seed round…" required></textarea>
+            </div>
+            <!-- Formspree options -->
+            <input type="hidden" name="_subject" value="RapidBio website — deck request" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button class="btn btn--primary btn--lg" type="submit">Send message <span class="arrow" aria-hidden="true">→</span></button>
+            <p class="form__note">Your message goes directly to John Erickson, President &amp; CEO.</p>
+          </form>
+
+          <!-- ===== ASIDE ===== -->
+          <aside class="contact-aside">
+            <h3>Prefer email?</h3>
+            <p class="lead">Reach out any time — we typically respond within a couple of business days.</p>
+            <ul class="contact-list">
+              <li>
+                <span class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </span>
+                <span><b>Email</b><a href="mailto:john.erickson@rapidbiosystems.com?subject=RapidBio%20—%20deck%20request">john.erickson@rapidbiosystems.com</a></span>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <span><b>John Erickson</b><span>President &amp; CEO, RapidBio Systems, Inc.</span></span>
+              </li>
+            </ul>
+            <div class="card" style="margin-top:30px">
+              <h3 style="margin-bottom:6px">What you'll receive</h3>
+              <p>The current investor deck covering the technology, market, validation, IP and roadmap for the seed round.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand">
+            <img src="assets/logo-mark.png" alt="" />
+            <div class="footer__wordmark">RapidBio Systems, Inc.<span>Fast Pathogen Detection Made Easy™</span></div>
+          </div>
+          <p class="footer__tag">Transforming food safety testing — one 10-minute test at a time.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:john.erickson@rapidbiosystems.com">john.erickson@rapidbiosystems.com</a></li>
+            <li><a href="contact.html">Request the deck</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 RapidBio Systems, Inc. All rights reserved.</span>
+        <span>Patented technology · Exclusive University of Arizona license</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script>
+    /* Async Formspree submit with in-place success/error state.
+       Falls back to a normal POST if JS is unavailable. */
+    (function () {
+      var form = document.getElementById("contact-form");
+      var status = document.getElementById("form-status");
+      if (!form) return;
+
+      var configured = form.action.indexOf("FORMSPREE_ENDPOINT") === -1;
+
+      form.addEventListener("submit", function (e) {
+        if (!configured) {
+          // Endpoint not set yet — guide the user to email instead of a broken POST.
+          e.preventDefault();
+          show("err", "Form isn't connected yet. Please email john.erickson@rapidbiosystems.com — thanks!");
+          return;
+        }
+        e.preventDefault();
+        var btn = form.querySelector("button[type=submit]");
+        var original = btn.innerHTML;
+        btn.disabled = true; btn.textContent = "Sending…";
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        }).then(function (r) {
+          if (r.ok) {
+            form.reset();
+            show("ok", "Thanks — your message is on its way. We'll be in touch shortly.");
+          } else {
+            show("err", "Something went wrong. Please try again, or email john.erickson@rapidbiosystems.com.");
+          }
+        }).catch(function () {
+          show("err", "Network error. Please email john.erickson@rapidbiosystems.com.");
+        }).finally(function () {
+          btn.disabled = false; btn.innerHTML = original;
+        });
+      });
+
+      function show(type, msg) {
+        status.textContent = msg;
+        status.className = "form-status show " + type;
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    })();
+  </script>
+</body>
+</html>
