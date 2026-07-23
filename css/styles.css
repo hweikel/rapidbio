@@ -238,7 +238,20 @@ strong { color: var(--ink); font-weight: 650; }
   background: var(--gold); color: var(--ink); font-weight: 700; border-radius: var(--pill); font-size: 1rem;
 }
 
+/* ---------- product spec bar ---------- */
+.spec-bar {
+  display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 56px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.spec-bar__item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; padding: 26px 30px; }
+.spec-bar__item + .spec-bar__item { border-left: 1px solid var(--line); }
+.spec-bar__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--mint); color: var(--green-700); display: grid; place-items: center; }
+.spec-bar b { display: block; color: var(--ink); font-size: 1.04rem; line-height: 1.35; }
+.spec-bar .d { color: var(--muted); font-size: .93rem; line-height: 1.5; }
+
 /* ---------- use-case photo cards ---------- */
+.usecases__head { text-align: center; font-size: 1.32rem; margin: 0 0 26px; }
 .usecases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .usecase {
   margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r);
@@ -368,6 +381,8 @@ strong { color: var(--ink); font-weight: 650; }
   .stats { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
   .usecases { grid-template-columns: 1fr 1fr; }
+  .spec-bar { grid-template-columns: 1fr; }
+  .spec-bar__item + .spec-bar__item { border-left: 0; border-top: 1px solid var(--line); }
   .steps { grid-template-columns: 1fr 1fr; }
   .step:not(:last-child)::after { display: none; }
   .team-grid { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; }
