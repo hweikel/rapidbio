@@ -1,3 +1,9 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# Source slide exports kept locally for extracting artwork. These carry
+# "Confidential: RapidBio Systems, Inc. Use Only" footers and must not be
+# published — the site deploys the whole repo, so anything committed here is
+# reachable at /assets/<name>.pdf.
+assets/*.pdf

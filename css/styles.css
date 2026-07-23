@@ -238,9 +238,36 @@ strong { color: var(--ink); font-weight: 650; }
   background: var(--gold); color: var(--ink); font-weight: 700; border-radius: var(--pill); font-size: 1rem;
 }
 
+/* ---------- use-case photo cards ---------- */
+.usecases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.usecase {
+  margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r);
+  overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .2s var(--ease), box-shadow .2s;
+}
+.usecase:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.usecase img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.usecase figcaption { padding: 22px 24px 26px; }
+.usecase h3 { font-size: 1.08rem; margin-bottom: 6px; }
+.usecase p { margin: 0; font-size: .95rem; color: var(--muted); }
+
+/* ---------- photo panel (product / cartridge detail) ---------- */
+.photo-panel {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 14px; box-shadow: var(--shadow); overflow: hidden;
+}
+.photo-panel img { width: 100%; border-radius: var(--r-sm); }
+.photo-panel--center { max-width: 720px; margin: 0 auto 36px; }
+
 /* ---------- comparison ---------- */
 .compare { display: grid; gap: 12px; margin-top: 8px; }
-.compare__row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: center; }
+.compare__row { display: grid; grid-template-columns: 58px 150px 1fr; gap: 16px; align-items: center; }
+.compare__thumb {
+  width: 58px; height: 58px; border-radius: var(--r-sm); border: 1px solid var(--line);
+  background: #fff; overflow: hidden;
+}
+.compare__thumb img { width: 100%; height: 100%; object-fit: contain; }
+.compare__row--us .compare__thumb { border-color: var(--mint-2); background: var(--mint); }
+.compare__thumb--icon { background: var(--mint); border-color: var(--mint-2); color: var(--green-700); display: grid; place-items: center; }
 .compare__label { font-weight: 650; color: var(--ink); font-size: .98rem; }
 .compare__label small { display: block; font-weight: 500; color: var(--muted); font-size: .82rem; }
 .compare__track { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--pill); height: 40px; display: flex; align-items: center; overflow: hidden; }
@@ -340,6 +367,7 @@ strong { color: var(--ink); font-weight: 650; }
   .split--media-right .split__media { order: -1; }
   .stats { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
+  .usecases { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .step:not(:last-child)::after { display: none; }
   .team-grid { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; }
@@ -365,8 +393,10 @@ strong { color: var(--ink); font-weight: 650; }
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .usecases { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
-  .compare__row { grid-template-columns: 110px 1fr; }
+  .compare__row { grid-template-columns: 44px 104px 1fr; gap: 10px; }
+  .compare__thumb { width: 44px; height: 44px; }
   .footer__top { grid-template-columns: 1fr; }
   .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
 }
