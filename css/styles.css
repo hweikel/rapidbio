@@ -70,6 +70,10 @@ h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); letter-spacing: -.03em; }
 h3 { font-size: 1.22rem; letter-spacing: -.02em; font-weight: 700; }
 p { margin: 0 0 1rem; }
 strong { color: var(--ink); font-weight: 650; }
+/* Em dashes in headings: display sizes and tight tracking make a full-width
+   dash read much heavier than the same dash in body copy. Scale heading
+   dashes back so every em dash on the site looks the same weight. */
+.mdash { font-size: .62em; vertical-align: .12em; margin-inline: .04em; letter-spacing: 0; }
 
 /* ---------- layout ---------- */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
@@ -192,9 +196,10 @@ strong { color: var(--ink); font-weight: 650; }
 }
 .split__media img { margin-inline: auto; }
 
-/* full-width technology diagram */
-.diagram-panel { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(18px, 3.5vw, 44px); box-shadow: var(--shadow); overflow-x: auto; }
-.diagram-panel img { display: block; width: 100%; min-width: 560px; max-width: 1080px; margin-inline: auto; }
+/* full-width technology diagram — bleeds past the text container so the
+   diagram itself can render larger than a normal content-width figure */
+.diagram-panel { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(16px, 2.6vw, 32px); box-shadow: var(--shadow); overflow-x: auto; margin-inline: calc(-1 * min(3vw, 90px)); }
+.diagram-panel img { display: block; width: 100%; min-width: 560px; max-width: 1320px; margin-inline: auto; }
 .diagram-hint { display: none; text-align: center; font-size: .82rem; color: var(--muted); margin: 12px 0 0; }
 
 .claims { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 18px; }
@@ -247,7 +252,7 @@ strong { color: var(--ink); font-weight: 650; }
 .spec-bar__item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; padding: 26px 30px; }
 .spec-bar__item + .spec-bar__item { border-left: 1px solid var(--line); }
 .spec-bar__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--mint); color: var(--green-700); display: grid; place-items: center; }
-.spec-bar b { display: block; color: var(--ink); font-size: 1.04rem; line-height: 1.35; }
+.spec-bar b { display: block; color: var(--ink); font-size: 1.2rem; line-height: 1.3; }
 .spec-bar .d { color: var(--muted); font-size: .93rem; line-height: 1.5; }
 
 /* ---------- use-case photo cards ---------- */
@@ -269,7 +274,7 @@ strong { color: var(--ink); font-weight: 650; }
   padding: 14px; box-shadow: var(--shadow); overflow: hidden;
 }
 .photo-panel img { width: 100%; border-radius: var(--r-sm); }
-.photo-panel--center { max-width: 720px; margin: 0 auto 36px; }
+.photo-panel--center { max-width: 560px; margin: 36px auto 0; }
 
 /* ---------- comparison ---------- */
 .compare { display: grid; gap: 12px; margin-top: 8px; }
@@ -308,6 +313,7 @@ strong { color: var(--ink); font-weight: 650; }
 .advisory { margin-top: 44px; padding: 28px 30px; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--r); }
 .advisory h3 { font-size: 1.05rem; margin-bottom: 10px; }
 .advisory p { margin: 0; color: var(--muted); }
+.advisory p b { color: var(--green-700); font-weight: 700; }
 
 /* ---------- partners / logos ---------- */
 .partners { margin-top: 8px; }
@@ -376,6 +382,7 @@ strong { color: var(--ink); font-weight: 650; }
   .hero__media img { max-height: 320px; }
   .nav__brand img { height: 38px; }
   .diagram-hint { display: block; }
+  .diagram-panel { margin-inline: 0; }
   .split { grid-template-columns: 1fr; }
   .split--media-right .split__media { order: -1; }
   .stats { grid-template-columns: 1fr; }
@@ -414,6 +421,12 @@ strong { color: var(--ink); font-weight: 650; }
   .compare__thumb { width: 44px; height: 44px; }
   .footer__top { grid-template-columns: 1fr; }
   .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+/* very narrow phones: keep the long CTA label inside the viewport */
+@media (max-width: 360px) {
+  .btn { white-space: normal; text-align: center; }
+  .btn--lg { padding: 15px 20px; font-size: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
