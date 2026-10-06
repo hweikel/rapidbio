@@ -154,7 +154,7 @@ strong { color: var(--ink); font-weight: 650; }
 .hero__sub { font-size: 1.22rem; color: var(--muted); max-width: 40ch; margin-bottom: 30px; }
 .hero__tagline {
   color: var(--ink); line-height: 1.12; letter-spacing: -.035em; font-weight: 750;
-  font-size: clamp(2.1rem, 4.6vw, 3.6rem); margin: 0 0 26px;
+  font-size: clamp(1.9rem, 4.1vw, 3.2rem); margin: 0 0 26px; white-space: nowrap;
 }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
 .hero__trust { font-size: .92rem; color: var(--muted); line-height: 1.6; }
@@ -342,10 +342,14 @@ strong { color: var(--ink); font-weight: 650; }
 /* ---------- partners / logos ---------- */
 .partners { margin-top: 8px; }
 .partners__label { text-align: center; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; }
-.partners__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(28px, 5vw, 60px); }
+.partners__row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  align-items: center; justify-items: center;
+  gap: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 40px);
+}
 .partners__row img { height: 34px; width: auto; }
 .partners__row img.logo-compact { height: 80px; }
-.partners__row img.logo-empirewest { height: 64px; }
+.partners__row img.logo-empirewest { height: 32px; }
 
 /* ---------- CTA band ---------- */
 .cta-band { background: linear-gradient(120deg, var(--green-700), var(--green)); color: #fff; border-radius: var(--r-lg); padding: clamp(40px, 6vw, 64px); text-align: center; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
@@ -445,6 +449,7 @@ strong { color: var(--ink); font-weight: 650; }
   .compare__thumb { width: 44px; height: 44px; }
   .footer__top { grid-template-columns: 1fr; }
   .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
+  .partners__row { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* very narrow phones: keep the long CTA label inside the viewport */

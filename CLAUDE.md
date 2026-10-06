@@ -18,11 +18,17 @@ no backend — plain HTML/CSS/JS deployed as-is.
 
 ## Deployment
 
-Hosted on **GitHub Pages**, legacy build (no Actions workflow),
-serving directly from the `main` branch root. Live at
-**https://hweikel.github.io/rapidbio/**. `.nojekyll` is present so
-Pages skips Jekyll processing. Pushing to `main` deploys immediately
-— there is no staging/preview step.
+Hosted on **Netlify** (free tier), deployed from the `main` branch
+root via `netlify.toml` (`publish = "."`, no build command — this is
+still a plain static site, no bundler). Pushing to `main` deploys
+immediately — there is no staging/preview step, though Netlify does
+generate deploy previews for PRs if/when a PR workflow is adopted.
+`.nojekyll` is a holdover from the prior GitHub Pages host and is
+harmless to leave in place.
+
+The site previously lived on GitHub Pages at
+`https://hweikel.github.io/rapidbio/`; that is no longer the
+canonical deploy.
 
 ## Running locally
 
@@ -34,15 +40,16 @@ then open `http://localhost:8000/index.html`.
 
 ## Known outstanding work
 
-- **Contact form is not wired up yet.** `contact.html` posts to
-  Formspree (`action="https://formspree.io/f/FORMSPREE_ENDPOINT"`),
-  but `FORMSPREE_ENDPOINT` is a literal placeholder, not a real form
-  ID. The inline script in `contact.html` detects this
-  (`form.action.indexOf("FORMSPREE_ENDPOINT") === -1`) and shows an
-  error telling visitors to email John directly instead of POSTing.
-  To finish this: create a form at formspree.io, swap the placeholder
-  for the real endpoint (`https://formspree.io/f/xxxxxxxx`), and
-  verify a real submission arrives before removing this note.
+- **Contact form uses Netlify Forms.** `contact.html` has
+  `data-netlify="true"` plus a hidden `form-name` field, and submits
+  via `fetch` to `/` with a Netlify-detected honeypot (`_gotcha`
+  field, `netlify-honeypot="_gotcha"`). Netlify detects the form by
+  parsing the static HTML at deploy time — no backend/build step
+  needed. After the first deploy, go to Site configuration → Forms in
+  the Netlify dashboard and add a notification (email-to, Slack,
+  etc.) so submissions actually reach someone — by default Netlify
+  just stores them silently. Verify a real test submission shows up
+  before considering this done.
 - No analytics/tracking is wired up anywhere on the site.
 - No custom domain (`CNAME`) is configured — site lives at the
   `github.io` subpath, not `rapidbiosystems.com` or similar.
