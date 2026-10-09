@@ -7,3 +7,7 @@ Thumbs.db
 # published — the site deploys the whole repo, so anything committed here is
 # reachable at /assets/<name>.pdf.
 assets/*.pdf
+
+# Internal board/working docs dropped in the repo root for reference —
+# not meant to be published (the whole repo is served publicly).
+*.docx
